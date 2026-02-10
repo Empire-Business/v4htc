@@ -1,0 +1,158 @@
+apiVersion: aios/v2
+kind: Squad
+metadata:
+  name: htc-squad
+  displayName: HTC (High Ticket Club) Squad
+  version: 1.0.0
+  createdAt: 2026-02-09
+  updatedAt: 2026-02-09
+  description: |
+    Squad especializado em criar e formatar o produto HTC (High Ticket Club) -
+    Plataforma completa que ensina estratégia High Ticket PRÁTICA para empresas
+    com ofertas high-ticket e tempo limitado.
+
+spec:
+  domain: high-ticket-marketing-product-launch
+  techStack:
+    - Next.js
+    - Supabase
+    - Hotmart
+    - Open Router
+    - Vercel
+
+  dependencies:
+    internal: []
+    external:
+      - name: hotmart
+        type: payment-api
+      - name: supabase
+        type: database
+      - name: openrouter
+        type: ai-api
+      - name: vercel
+        type: hosting
+
+  agents:
+    - id: hormozi-agent
+      role: lead
+      responsibilities:
+        - Estruturação do produto completo
+        - Criação de ofertas high-ticket
+        - Definição de planos e precificação
+        - Criação de cursos completos
+        - Desenvolvimento de Claude Skills
+        - Scripts de vendas
+    - id: russel-brunson-agent
+      role: marketing-lead
+      responsibilities:
+        - Criação de funis de venda
+        - Copywriting de páginas
+        - Sequências de e-mail
+        - Scripts de follow-up
+        - Conteúdo de marketing
+    - id: design-agent
+      role: design-lead
+      responsibilities:
+        - Identidade visual
+        - Protótipos da plataforma
+        - Sistema de design
+    - id: slides-agent
+      role: content-specialist
+      responsibilities:
+        - Criação de slides de vendas
+        - Materiais visuais
+    - id: prd-agent
+      role: documentation-specialist
+      responsibilities:
+        - Documentação técnica
+        - Execução de PRD
+
+  phases:
+    - id: foundation
+      name: Fundação
+      order: 1
+      execution: serial
+      tasks:
+        - task: structure-product
+          agent: hormozi-agent
+          dependencies: []
+        - task: define-offer-plans
+          agent: hormozi-agent
+          dependencies: [structure-product]
+        - task: create-complete-course
+          agent: hormozi-agent
+          dependencies: [define-offer-plans]
+        - task: create-claude-skills
+          agent: hormozi-agent
+          dependencies: [create-complete-course]
+        - task: create-installation-course
+          agent: hormozi-agent
+          dependencies: [create-claude-skills]
+        - task: create-app-builder-course
+          agent: hormozi-agent
+          dependencies: [create-installation-course]
+        - task: create-visual-identity
+          agent: design-agent
+          dependencies: [create-app-builder-course]
+        - task: finalize-sales-scripts
+          agent: hormozi-agent
+          dependencies: [create-visual-identity]
+
+    - id: funnels
+      name: Funis de Venda
+      order: 2
+      execution: serial
+      priority: critical
+      tasks:
+        - task: create-sales-funnel
+          agent: russel-brunson-agent
+          dependencies: []
+
+    - id: marketing
+      name: Marketing
+      order: 3
+      execution: parallel
+      tasks:
+        - task: create-marketing-materials
+          agent: russel-brunson-agent
+          dependencies: [create-sales-funnel]
+        - task: create-platform-prototypes
+          agent: design-agent
+          dependencies: [create-sales-funnel]
+        - task: create-sales-slides
+          agent: slides-agent
+          dependencies: [create-sales-funnel]
+
+    - id: finalization
+      name: Finalização
+      order: 4
+      execution: serial
+      tasks:
+        - task: compile-materials
+          agent: hormozi-agent
+          dependencies: []
+        - task: execute-prd
+          agent: prd-agent
+          dependencies: [compile-materials]
+        - task: create-visualization-app
+          agent: prd-agent
+          dependencies: [execute-prd]
+
+  outputs:
+    - Curso completo em .md (Método High Ticket)
+    - 10 Claude Skills prontas (.zip)
+    - Curso de Instalação Claude Code (GLM Z-AI)
+    - Curso de Construção de Apps (PRD + Vibecoding)
+    - Funil de venda completo detalhado
+    - Materiais de marketing completos
+    - Scripts de vendas
+    - 3 planos anuais (a partir de R$ 10k)
+    - Identidade visual completa
+    - PRD documentado
+    - Aplicação de visualização (Next.js)
+
+  references:
+    - PRD-GEN.md
+    - MAAS-HTC-Completo.md
+    - Transcripts/
+    - Transcripts_md/

@@ -345,13 +345,93 @@ O usuário constrói suas próprias soluções usando as skills e manuais fornec
 9. **`htc-content-generator.zip`** - Skill para gerar conteúdo de marketing (posts, reels, etc)
 10. **`htc-analytics-coach.zip`** - Skill para analisar métricas e otimizar resultados
 
-**Cada skill deve ser ROBUSTA e conter:**
-- Prompt configurado e otimizado
-- Instruções claras de uso
-- Exemplos de utilização
-- Variáveis e parâmetros necessários
-- **VÁRIAS PASTAS AUXILIARES** com arquivos de suporte (templates, exemplos, referências, etc)
-- **MANUAL detalhado** dentro do .zip explicando como usar a skill (não apenas prompts)
+**🔥 ESTRUTURA OBRIGATÓRIA PARA CADA SKILL:**
+
+Cada skill deve seguir a estrutura abaixo **RIGOROSAMENTE**:
+
+```
+skill-name/
+├── README.md                    # Visão geral rápida da skill (o que faz, quando usar)
+├── SKILL.md                     # Prompt principal da skill (para colar no Claude Code)
+├── MANUAL.md                    # Instruções detalhadas de uso passo a passo
+│
+├── examples/                    # EXEMPLOS REAIS de uso (mínimo 5 exemplos)
+│   ├── exemplo-basico.md        # Exemplo simples de entrada/saída
+│   ├── exemplo-intermediario.md # Exemplo com mais complexidade
+│   ├── exemplo-avancado.md      # Exemplo completo e sofisticado
+│   ├── caso-real-01.md          # Caso de uso real do negócio
+│   └── caso-real-02.md          # Outro caso real
+│
+├── templates/                   # TEMPLATES PRONTOS para copiar/colar
+│   ├── template-01.md           # Template 1: Descrição
+│   ├── template-02.md           # Template 2: Descrição
+│   └── template-03.md           # Template 3: Descrição
+│
+├── references/                  # MATERIAL DE REFERÊNCIA (teoria e fundamentos)
+│   ├── conceitos-chave.md       # Conceitos fundamentais que a skill usa
+│   ├──框架-e-metodologias.md    # Frameworks que a skill aplica
+│   ├── melhores-praticas.md     # O que fazer e NÃO fazer
+│   └── casos-sucesso.md         # Exemplos de sucesso para inspiração
+│
+├── workflows/                   # FLUXOS DE TRABALHO PASSO A PASSO
+│   ├── workflow-iniciante.md    # Fluxo completo para quem está começando
+│   ├── workflow-intermediario.md# Fluxo para quem já tem experiência
+│   └── workflow-avancado.md     # Fluxo otimizado para resultados máximos
+│
+├── prompts/                     # VARIAÇÕES DE PROMPTS para diferentes contextos
+│   ├── prompt-entrada.md        # Prompt inicial/primeiro contato
+│   ├── prompt-avancado.md       # Prompt para resultados mais sofisticados
+│   ├── prompt-refinamento.md    # Prompt para melhorar resultados
+│   └── prompt-correcao.md       # Prompt quando algo deu errado
+│
+└── checklists/                  # CHECKLISTS para garantir qualidade
+    ├── checklist-pre-execucao.md  # Antes de usar a skill
+    ├── checklist-qualidade.md    # Para validar o resultado
+    └── checklist-entrega.md      # Antes de entregar/finalizar
+```
+
+**📋 REGRAS DE OURO PARA CADA PASTA:**
+
+1. **examples/**: Mínimo 5 exemplos. Cada exemplo deve ter:
+   - Contexto da situação
+   - Input (o que foi digitado)
+   - Output (o que a skill gerou)
+   - Comentário sobre o resultado
+
+2. **templates/**: Mínimo 3 templates. Cada template deve ser:
+   - Copiável e colável imediatamente
+   - Com placeholders claros [COMO ISSO]
+   - Com instruções de preenchimento
+
+3. **references/**: Material de qualidade:
+   - Conceitos sólidos e bem explicados
+   - Frameworks reconhecidos no mercado
+   - Melhores práticas e erros comuns
+   - Casos de sucesso reais
+
+4. **workflows/**: Fluxos CLAROS:
+   - Passo 1, Passo 2, Passo 3...
+   - O que fazer em cada etapa
+   - Como saber se deu certo
+   - O que fazer se der errado
+
+5. **prompts/**: Variações úteis:
+   - Para diferentes níveis de experiência
+   - Para diferentes objetivos
+   - Para diferentes contextos
+
+6. **checklists/**: Itens verificáveis:
+   - Sim/Não ou checkbox
+   - Fácil de validar rapidamente
+
+**⚠️ QUALIDADE MÍNIMA EXIGIDA:**
+
+- **examples/**: Mínimo 5 exemplos reais
+- **templates/**: Mínimo 3 templates prontos
+- **references/**: Mínimo 3 arquivos de referência
+- **workflows/**: Mínimo 2 workflows completos
+- **prompts/**: Mínimo 3 variações de prompts
+- **checklists/**: Mínimo 2 checklists úteis
 
 **Localização:**
 - Coloque todos os arquivos .zip em uma pasta organizada
